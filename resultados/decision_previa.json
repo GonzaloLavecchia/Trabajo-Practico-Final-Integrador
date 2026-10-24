@@ -1,0 +1,6 @@
+{
+  "selected": "LR C=1",
+  "selection_rule": "P20 medio de CV; tolerancia 1 pp para LR simple; desempate AP",
+  "threshold_oof": 0.28500000000000003,
+  "threshold_target_feasible_oof": true
+}

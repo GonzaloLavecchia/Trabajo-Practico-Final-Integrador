@@ -1,0 +1,665 @@
+{
+  "quality": {
+    "n": 7043,
+    "columns": 21,
+    "positive": 1869,
+    "prevalence": 0.2653698707936959,
+    "missing_total": 11,
+    "missing_total_tenure0": 11,
+    "duplicate_ids": 0,
+    "duplicate_rows": 0,
+    "other_missing": 0,
+    "n_train": 5634,
+    "n_test": 1409,
+    "train_positive": 1495,
+    "test_positive": 374,
+    "features": [
+      "Partner",
+      "Dependents",
+      "tenure",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod",
+      "MonthlyCharges",
+      "TotalCharges",
+      "total_sin_facturar",
+      "cantidad_servicios",
+      "pago_automatico"
+    ]
+  },
+  "eda_train": {
+    "Contract": [
+      {
+        "Contract": "Month-to-month",
+        "count": 3102,
+        "sum": 1326,
+        "mean": 0.4274661508704062
+      },
+      {
+        "Contract": "One year",
+        "count": 1173,
+        "sum": 130,
+        "mean": 0.11082693947144075
+      },
+      {
+        "Contract": "Two year",
+        "count": 1359,
+        "sum": 39,
+        "mean": 0.02869757174392936
+      }
+    ],
+    "InternetService": [
+      {
+        "InternetService": "DSL",
+        "count": 1937,
+        "sum": 362,
+        "mean": 0.1868869385647909
+      },
+      {
+        "InternetService": "Fiber optic",
+        "count": 2483,
+        "sum": 1045,
+        "mean": 0.4208618606524366
+      },
+      {
+        "InternetService": "No",
+        "count": 1214,
+        "sum": 88,
+        "mean": 0.07248764415156507
+      }
+    ],
+    "PaymentMethod": [
+      {
+        "PaymentMethod": "Bank transfer (automatic)",
+        "count": 1244,
+        "sum": 201,
+        "mean": 0.16157556270096463
+      },
+      {
+        "PaymentMethod": "Credit card (automatic)",
+        "count": 1213,
+        "sum": 181,
+        "mean": 0.14921681780708987
+      },
+      {
+        "PaymentMethod": "Electronic check",
+        "count": 1891,
+        "sum": 865,
+        "mean": 0.4574299312533051
+      },
+      {
+        "PaymentMethod": "Mailed check",
+        "count": 1286,
+        "sum": 248,
+        "mean": 0.19284603421461896
+      }
+    ],
+    "tenure": [
+      {
+        "antiguedad": "0 a 12",
+        "count": 1737,
+        "sum": 822,
+        "mean": 0.47322970639032813
+      },
+      {
+        "antiguedad": "13 a 24",
+        "count": 818,
+        "sum": 234,
+        "mean": 0.2860635696821516
+      },
+      {
+        "antiguedad": "25 a 48",
+        "count": 1290,
+        "sum": 261,
+        "mean": 0.20232558139534884
+      },
+      {
+        "antiguedad": "49 a 72",
+        "count": 1789,
+        "sum": 178,
+        "mean": 0.09949692565679151
+      }
+    ],
+    "corr_total_tenure": 0.8294328947179666,
+    "corr_total_monthly": 0.6539685430921851,
+    "ranges": {
+      "tenure": [
+        0.0,
+        72.0
+      ],
+      "MonthlyCharges": [
+        18.4,
+        118.75
+      ],
+      "TotalCharges": [
+        18.85,
+        8684.8
+      ]
+    },
+    "median_monthly_by_churn": {
+      "No": 64.4,
+      "Yes": 79.95
+    }
+  },
+  "cv": [
+    {
+      "name": "LR C=0.1",
+      "family": "LR",
+      "p20": 0.6743362831858406,
+      "p20_sd": 0.030591833659192217,
+      "r20": 0.5096989966555183,
+      "r20_sd": 0.02312292443805163,
+      "roc_auc": 0.8456274139765843,
+      "roc_auc_sd": 0.013741070954983427,
+      "ap": 0.6611822644966374,
+      "ap_sd": 0.02228447258131009,
+      "precision": 0.6576293529661854,
+      "precision_sd": 0.0337656337038701,
+      "recall": 0.5411371237458195,
+      "recall_sd": 0.0441420895034018,
+      "f1": 0.5928158651807376,
+      "f1_sd": 0.030762511214998504,
+      "accuracy": 0.8031613819363563,
+      "accuracy_sd": 0.012812942228271907
+    },
+    {
+      "name": "LR C=1",
+      "family": "LR",
+      "p20": 0.6769911504424779,
+      "p20_sd": 0.029682318285395432,
+      "r20": 0.5117056856187291,
+      "r20_sd": 0.02243546465718851,
+      "roc_auc": 0.8462627959306687,
+      "roc_auc_sd": 0.01449754132355167,
+      "ap": 0.6615609824764996,
+      "ap_sd": 0.02215442700480282,
+      "precision": 0.6587544651188163,
+      "precision_sd": 0.03574221488394087,
+      "recall": 0.5498327759197325,
+      "recall_sd": 0.04497053194373677,
+      "f1": 0.5986652544302448,
+      "f1_sd": 0.0340461205615643,
+      "accuracy": 0.8047594881647152,
+      "accuracy_sd": 0.014686923285647894
+    },
+    {
+      "name": "LR C=10",
+      "family": "LR",
+      "p20": 0.6769911504424779,
+      "p20_sd": 0.03097345132743362,
+      "r20": 0.5117056856187292,
+      "r20_sd": 0.02341137123745818,
+      "roc_auc": 0.8464687946555813,
+      "roc_auc_sd": 0.014656064201586667,
+      "ap": 0.6609915922646934,
+      "ap_sd": 0.021540533206592837,
+      "precision": 0.6612242606706628,
+      "precision_sd": 0.03432538681134245,
+      "recall": 0.5531772575250835,
+      "recall_sd": 0.04299968147056903,
+      "f1": 0.6016945600204588,
+      "f1_sd": 0.03218472538656195,
+      "accuracy": 0.8060015665853955,
+      "accuracy_sd": 0.014029177061412771
+    },
+    {
+      "name": "LR balanced",
+      "family": "LR",
+      "p20": 0.6743362831858407,
+      "p20_sd": 0.03169204350348669,
+      "r20": 0.5096989966555184,
+      "r20_sd": 0.023954521176548456,
+      "roc_auc": 0.8461601897458835,
+      "roc_auc_sd": 0.014369201530099684,
+      "ap": 0.660542687744697,
+      "ap_sd": 0.02278841186211553,
+      "precision": 0.5187797023296075,
+      "precision_sd": 0.019801424135197154,
+      "recall": 0.8033444816053512,
+      "recall_sd": 0.04193291777567219,
+      "f1": 0.6302906543669281,
+      "f1_sd": 0.025616902113249233,
+      "accuracy": 0.7500905435925238,
+      "accuracy_sd": 0.016116876945659227
+    },
+    {
+      "name": "RF hoja=3",
+      "family": "RF",
+      "p20": 0.6628318584070796,
+      "p20_sd": 0.03517629542363148,
+      "r20": 0.5010033444816053,
+      "r20_sd": 0.026588102895453884,
+      "roc_auc": 0.8380320868536411,
+      "roc_auc_sd": 0.012051154526614883,
+      "ap": 0.6476676341358842,
+      "ap_sd": 0.02391132245039355,
+      "precision": 0.6635312463064732,
+      "precision_sd": 0.04531370730073432,
+      "recall": 0.49230769230769234,
+      "recall_sd": 0.02473560145431516,
+      "f1": 0.5650157656790271,
+      "f1_sd": 0.030486767734773924,
+      "accuracy": 0.7987252975172616,
+      "accuracy_sd": 0.015743316462727766
+    },
+    {
+      "name": "RF hoja=10",
+      "family": "RF",
+      "p20": 0.6663716814159292,
+      "p20_sd": 0.024755045541060807,
+      "r20": 0.5036789297658862,
+      "r20_sd": 0.018711171546086095,
+      "roc_auc": 0.8460464202457605,
+      "roc_auc_sd": 0.010504359575556765,
+      "ap": 0.6604733160554497,
+      "ap_sd": 0.02139483582378059,
+      "precision": 0.6754891853745268,
+      "precision_sd": 0.042273168445518185,
+      "recall": 0.4896321070234114,
+      "recall_sd": 0.025316643301371972,
+      "f1": 0.5672564029046444,
+      "f1_sd": 0.025715269511629765,
+      "accuracy": 0.8017419988305772,
+      "accuracy_sd": 0.013184841982018868
+    },
+    {
+      "name": "XGB profundidad=2",
+      "family": "XGB",
+      "p20": 0.6778761061946903,
+      "p20_sd": 0.026252030042816496,
+      "r20": 0.5123745819397992,
+      "r20_sd": 0.01984267153737969,
+      "roc_auc": 0.8500263546260192,
+      "roc_auc_sd": 0.013289679320416308,
+      "ap": 0.6685613346507049,
+      "ap_sd": 0.024415166129911188,
+      "precision": 0.6681043239718951,
+      "precision_sd": 0.02758325071244095,
+      "recall": 0.5250836120401338,
+      "recall_sd": 0.022058371167680453,
+      "f1": 0.587754878653629,
+      "f1_sd": 0.019833988351543173,
+      "accuracy": 0.8045810802504645,
+      "accuracy_sd": 0.009747004517706334
+    },
+    {
+      "name": "XGB profundidad=3",
+      "family": "XGB",
+      "p20": 0.6761061946902656,
+      "p20_sd": 0.032121577721914214,
+      "r20": 0.5110367892976588,
+      "r20_sd": 0.0242791858366308,
+      "roc_auc": 0.8484763710769636,
+      "roc_auc_sd": 0.012884690088983733,
+      "ap": 0.6689422640365507,
+      "ap_sd": 0.0238509066215588,
+      "precision": 0.6676833965774993,
+      "precision_sd": 0.03104164814818805,
+      "recall": 0.5190635451505016,
+      "recall_sd": 0.027921915002999047,
+      "f1": 0.5837867096582304,
+      "f1_sd": 0.025654350649690235,
+      "accuracy": 0.8036939264083113,
+      "accuracy_sd": 0.011687196760490065
+    },
+    {
+      "name": "LR SMOTENC",
+      "family": "SMOTENC",
+      "p20": 0.6592920353982301,
+      "p20_sd": 0.021449910873523582,
+      "r20": 0.4983277591973244,
+      "r20_sd": 0.016212976111760286,
+      "roc_auc": 0.843167530358347,
+      "roc_auc_sd": 0.013294455287178906,
+      "ap": 0.6558011383500781,
+      "ap_sd": 0.023428567394141946,
+      "precision": 0.5300433868783369,
+      "precision_sd": 0.02099613951767741,
+      "recall": 0.7792642140468228,
+      "recall_sd": 0.03609871763365035,
+      "f1": 0.6305693168937386,
+      "f1_sd": 0.020258844958607723,
+      "accuracy": 0.75772504692664,
+      "accuracy_sd": 0.014931053557616435
+    },
+    {
+      "name": "LR sin TotalCharges",
+      "family": "Ablacion",
+      "p20": 0.6699115044247786,
+      "p20_sd": 0.02756179026972997,
+      "r20": 0.5063545150501673,
+      "r20_sd": 0.02083265752829087,
+      "roc_auc": 0.84501362944291,
+      "roc_auc_sd": 0.013998275838691636,
+      "ap": 0.6601296419539184,
+      "ap_sd": 0.02156736696133578,
+      "precision": 0.6549327046604,
+      "precision_sd": 0.03498748400784036,
+      "recall": 0.5397993311036788,
+      "recall_sd": 0.0439007005300613,
+      "f1": 0.5909544671788953,
+      "f1_sd": 0.031503403055078684,
+      "accuracy": 0.8020966082007751,
+      "accuracy_sd": 0.013550253950339618
+    }
+  ],
+  "decision": {
+    "selected": "LR C=1",
+    "selection_rule": "P20 medio de CV; tolerancia 1 pp para LR simple; desempate AP",
+    "threshold_oof": 0.28500000000000003,
+    "threshold_target_feasible_oof": true
+  },
+  "test_05": {
+    "roc_auc": 0.84088713219148,
+    "ap": 0.6313126610763707,
+    "precision": 0.6477987421383647,
+    "recall": 0.5508021390374331,
+    "f1": 0.5953757225433526,
+    "accuracy": 0.801277501774308,
+    "brier": 0.1385806772509414,
+    "p20": 0.6595744680851063,
+    "r20": 0.49732620320855614,
+    "lift20": 2.484867447946296,
+    "k": 282,
+    "hits": 186,
+    "confusion_05": [
+      [
+        923,
+        112
+      ],
+      [
+        168,
+        206
+      ]
+    ]
+  },
+  "test_threshold": {
+    "roc_auc": 0.84088713219148,
+    "ap": 0.6313126610763707,
+    "precision": 0.514336917562724,
+    "recall": 0.767379679144385,
+    "f1": 0.6158798283261803,
+    "accuracy": 0.7459190915542938,
+    "brier": 0.1385806772509414,
+    "p20": 0.6595744680851063,
+    "r20": 0.49732620320855614,
+    "lift20": 2.484867447946296,
+    "k": 282,
+    "hits": 186,
+    "confusion": [
+      [
+        764,
+        271
+      ],
+      [
+        87,
+        287
+      ]
+    ]
+  },
+  "campaign_confusion": [
+    [
+      939,
+      96
+    ],
+    [
+      188,
+      186
+    ]
+  ],
+  "p20_bootstrap95": [
+    0.6028368794326241,
+    0.7198581560283688
+  ],
+  "audit": {
+    "gender": [
+      {
+        "grupo": "Female",
+        "n": 687,
+        "positivos": 193,
+        "contactos": 138,
+        "seleccion": 0.20087336244541484,
+        "p20_grupo": 0.6739130434782609,
+        "recall_grupo": 0.48186528497409326
+      },
+      {
+        "grupo": "Male",
+        "n": 722,
+        "positivos": 181,
+        "contactos": 144,
+        "seleccion": 0.1994459833795014,
+        "p20_grupo": 0.6458333333333334,
+        "recall_grupo": 0.5138121546961326
+      }
+    ],
+    "SeniorCitizen": [
+      {
+        "grupo": "0",
+        "n": 1187,
+        "positivos": 276,
+        "contactos": 201,
+        "seleccion": 0.16933445661331087,
+        "p20_grupo": 0.6467661691542289,
+        "recall_grupo": 0.47101449275362317
+      },
+      {
+        "grupo": "1",
+        "n": 222,
+        "positivos": 98,
+        "contactos": 81,
+        "seleccion": 0.36486486486486486,
+        "p20_grupo": 0.691358024691358,
+        "recall_grupo": 0.5714285714285714
+      }
+    ]
+  },
+  "coefficients": [
+    {
+      "feature": "num__tenure",
+      "coefficient": -1.2325307623168817
+    },
+    {
+      "feature": "cat__Contract_Two year",
+      "coefficient": -0.7752091914809877
+    },
+    {
+      "feature": "cat__InternetService_DSL",
+      "coefficient": -0.6893248346054761
+    },
+    {
+      "feature": "num__MonthlyCharges",
+      "coefficient": -0.6201081211323352
+    },
+    {
+      "feature": "cat__total_sin_facturar_Yes",
+      "coefficient": -0.46656745370638747
+    },
+    {
+      "feature": "cat__PaperlessBilling_No",
+      "coefficient": -0.3538524518207147
+    },
+    {
+      "feature": "cat__Dependents_Yes",
+      "coefficient": -0.29213843071466417
+    },
+    {
+      "feature": "cat__InternetService_No",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__TechSupport_No internet service",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__StreamingTV_No internet service",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__OnlineBackup_No internet service",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__OnlineSecurity_No internet service",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__StreamingMovies_No internet service",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__DeviceProtection_No internet service",
+      "coefficient": -0.27846950621601574
+    },
+    {
+      "feature": "cat__MultipleLines_No",
+      "coefficient": -0.2545271651688123
+    },
+    {
+      "feature": "cat__OnlineSecurity_Yes",
+      "coefficient": -0.25110337782404435
+    },
+    {
+      "feature": "cat__pago_automatico_Yes",
+      "coefficient": -0.2504780077653516
+    },
+    {
+      "feature": "cat__PhoneService_Yes",
+      "coefficient": -0.23110058942573883
+    },
+    {
+      "feature": "cat__TechSupport_Yes",
+      "coefficient": -0.22747930594524438
+    },
+    {
+      "feature": "cat__PaymentMethod_Mailed check",
+      "coefficient": -0.19699315466132358
+    },
+    {
+      "feature": "cat__Partner_No",
+      "coefficient": -0.18391302300305545
+    },
+    {
+      "feature": "cat__StreamingTV_No",
+      "coefficient": -0.18243750855030297
+    },
+    {
+      "feature": "cat__StreamingMovies_No",
+      "coefficient": -0.1808165110007955
+    },
+    {
+      "feature": "cat__Partner_Yes",
+      "coefficient": -0.14909499910918672
+    },
+    {
+      "feature": "cat__PaymentMethod_Credit card (automatic)",
+      "coefficient": -0.1407113398817126
+    },
+    {
+      "feature": "cat__Contract_One year",
+      "coefficient": -0.1350839436993844
+    },
+    {
+      "feature": "cat__OnlineBackup_Yes",
+      "coefficient": -0.12387241338417886
+    },
+    {
+      "feature": "cat__PaymentMethod_Bank transfer (automatic)",
+      "coefficient": -0.10976666788364169
+    },
+    {
+      "feature": "cat__PhoneService_No",
+      "coefficient": -0.10190743268650554
+    },
+    {
+      "feature": "cat__MultipleLines_No phone service",
+      "coefficient": -0.10190743268650554
+    },
+    {
+      "feature": "cat__pago_automatico_No",
+      "coefficient": -0.082530014346887
+    },
+    {
+      "feature": "cat__DeviceProtection_Yes",
+      "coefficient": -0.05637707440141254
+    },
+    {
+      "feature": "cat__Dependents_No",
+      "coefficient": -0.040869591397576
+    },
+    {
+      "feature": "cat__DeviceProtection_No",
+      "coefficient": 0.0018385585051845473
+    },
+    {
+      "feature": "cat__PaperlessBilling_Yes",
+      "coefficient": 0.020844429708462186
+    },
+    {
+      "feature": "cat__MultipleLines_Yes",
+      "coefficient": 0.02342657574306985
+    },
+    {
+      "feature": "cat__OnlineBackup_No",
+      "coefficient": 0.06933389748796576
+    },
+    {
+      "feature": "cat__PaymentMethod_Electronic check",
+      "coefficient": 0.11446314031444363
+    },
+    {
+      "feature": "cat__StreamingMovies_Yes",
+      "coefficient": 0.12627799510457322
+    },
+    {
+      "feature": "cat__StreamingTV_Yes",
+      "coefficient": 0.12789899265408652
+    },
+    {
+      "feature": "cat__total_sin_facturar_No",
+      "coefficient": 0.13355943159414235
+    },
+    {
+      "feature": "cat__TechSupport_No",
+      "coefficient": 0.17294079004903296
+    },
+    {
+      "feature": "cat__OnlineSecurity_No",
+      "coefficient": 0.196564861927827
+    },
+    {
+      "feature": "num__cantidad_servicios",
+      "coefficient": 0.24831410917874416
+    },
+    {
+      "feature": "num__TotalCharges",
+      "coefficient": 0.5137915375746871
+    },
+    {
+      "feature": "cat__Contract_Month-to-month",
+      "coefficient": 0.5772851130681366
+    },
+    {
+      "feature": "cat__InternetService_Fiber optic",
+      "coefficient": 0.6347863187092515
+    }
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.7.2",
+    "imbalanced-learn": "0.14.0",
+    "xgboost": "3.1.1"
+  },
+  "url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+  "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91"
+}
